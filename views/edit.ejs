@@ -1,12 +1,24 @@
-<h1>Edit The <%= faq.problem %></h1>
+<% include ./partials/header %>
 
-<form action="/faqs/<%= faq._id%>?_method=PUT" method='POST'> <!--Meethod overriding the post request to put request-->>
-    <input type="text" name="faq[problem]" value="<%= faq.problem %>" >
-    <input type="text" name="faq[diagram]" value="<%= faq.diagram %>" >
-    <textarea  name="faq[solution]"> 
-        <% faq.solution.forEach(function(solutions) { %>
-            <%= solutions %>
-        <% }) %>
-    </textarea>
-    <input type="submit">
-</form>'
+<div class="container">
+    <h1>Edit The <%= faq.problem %></h1>
+    <form action="/faqs/<%= faq._id%>?_method=PUT" method='POST'><!--Meethod overriding the post request to put request-->
+        <div class="form-group">
+            <label >Question</label>
+            <input type="text" class="form-control" name="faq[problem]" value="<%= faq.problem %>">
+        </div>
+        <div class="form-group">
+            <label >Image (if any)</label>
+            <input type="text" class="form-control" name="faq[diagram]" value="<%= faq.diagram %>">
+        </div>
+        <div class="form-group">
+            <label >Solution</label>
+            <textarea  name="faq[solution]" class="form-control">
+                <% faq.solution.forEach(function(solutions) { %>
+                    <%= solutions %>
+                <% }) %>
+            </textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

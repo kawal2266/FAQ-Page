@@ -106,9 +106,9 @@ app.put('/faqs/:id',function(req,res){
 app.delete('/faqs/:id',function(req,res){
    Faq.findByIdAndRemove(req.params.id , function(err){
        if(err) { 
-            res.redirect('/faqs')
+           res.send("ERROR OCCURED!!");
        }else{
-            res.redirect('/faqs')
+           res.redirect('/faqs')
        }
    })
 })

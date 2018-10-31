@@ -1,0 +1,33 @@
+i#icon {
+    font-size : 2em;
+}
+body {
+    font-family: Georgia;
+}
+.container{
+    padding-left : 0.5%;
+}
+
+.navbar
+{
+    background: linear-gradient(to right, #00ccff 0%, #ff6699 100%);
+}
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+    color:yellow;
+    size:3em;
+}
+#prob{
+    padding-left:10%;
+    font-weight: 700;
+    font-size:4em;
+
+}
+
+.list-faqs{
+    display : block;
+    border: 3px solid lightgrey;
+    margin: 2.5%;
+    font-family: Georgia;
+    padding : 0.5%;
+}

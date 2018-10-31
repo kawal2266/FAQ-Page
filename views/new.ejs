@@ -1,13 +1,26 @@
 <% include ./partials/header %>
+
+
 <div>
     <div>
-        <h1>What your doubt ?</h1>
+        <h1>What's your doubt ?</h1>
     </div>
-    <form action='/faqs' method='POST'>
-        <input type="text" name="faq[problem]" placeholder="problem statment">
-        <input type="text" name="faq[diagram]" placeholder="diagram (if any)">
-        <textarea  name="faq[solution]"></textarea>
-        <input type="submit">
-    </form>
+    <div class="container">
+        <form action='/faqs' method='POST'>
+            <div class="form-group">
+                <label >Question</label>
+                <input type="text" class="form-control" name="faq[problem]" placeholder="problem statment">
+            </div>
+            <div class="form-group">
+                <label >Image (if any)</label>
+                <input type="text" class="form-control"  name="faq[diagram]" placeholder="image address">
+            </div>
+            <div class="form-group">
+                <label >Solution</label>
+                <textarea  name="faq[solution]" class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 </div>
 <% include ./partials/footer %>

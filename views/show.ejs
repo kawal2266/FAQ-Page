@@ -1,15 +1,25 @@
+<% include ./partials/header %>
 
-<h1><%= faq.problem %></h1>
-
-<div>
-    <img src="<%= faq.diagram %>" >
-    <span><%= faq.created.toDateString() %></span>
+<div class="container" >
+    <h1 id="prob"><%= faq.problem %></h1>
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <div class="img-thumbnail">
+                <figure class="figure text-center">
+                    <img class="rounded" src="<%= faq.diagram %>" >
+                    <figcaption class="figure-caption">Created On : <%= faq.created.toDateString() %></figcaption>
+                </figure>
+                
+            </div>
+        </div>
+    </div>
     <% faq.solution.forEach(function(solutions) { %>
         <li><%= solutions %> </li> 
     <% }) %>  
+    <a class="btn btn-outline-primary" role="button" href="/faqs/<%= faq._id %>/edit">Edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+    <form action="/faqs/<%= faq._id %>?_method=DELETE" method="POST" style="display:inline;">
+        <button class="btn btn-outline-danger">Delete <i class="fa fa-times" aria-hidden="true"></i></button>
+    </form>
 </div>
-<a href="/faqs/<%= faq._id %>/edit">Edit</a>
-<form action="/faqs/<%= faq._id %>?_method=DELETE" method="POST" style="display:inline;">
-    <button>Delete</button>
-</form>
+
 <% include ./partials/footer %>

@@ -1,13 +1,10 @@
 <% include ./partials/header %>
-<h1>FAQ</h1>
 
 <% allfaqs.forEach(function(faq){ %>
-    <div>
+    <div class="list-faqs">
         <h2><%= faq.problem %></h2>
-    </div>
-    <div>
         <span><%= faq.created.toDateString() %></span>
-        <a href='/faqs/<%= faq._id%>'>Read more</a>
+        <a class="btn btn-outline-primary" role="button"  href='/faqs/<%= faq._id%>' >Read more</a>
     </div>
 <% }) %>
 <% include ./partials/footer %>
