@@ -1,0 +1,13 @@
+<% include ./partials/header %>
+<div>
+    <div>
+        <h1>What your doubt ?</h1>
+    </div>
+    <form action='/faqs' method='POST'>
+        <input type="text" name="faq[problem]" placeholder="problem statment">
+        <input type="text" name="faq[diagram]" placeholder="diagram (if any)">
+        <textarea  name="faq[solution]"></textarea>
+        <input type="submit">
+    </form>
+</div>
+<% include ./partials/footer %>

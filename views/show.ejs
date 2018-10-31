@@ -1,0 +1,15 @@
+
+<h1><%= faq.problem %></h1>
+
+<div>
+    <img src="<%= faq.diagram %>" >
+    <span><%= faq.created.toDateString() %></span>
+    <% faq.solution.forEach(function(solutions) { %>
+        <li><%= solutions %> </li> 
+    <% }) %>  
+</div>
+<a href="/faqs/<%= faq._id %>/edit">Edit</a>
+<form action="/faqs/<%= faq._id %>?_method=DELETE" method="POST" style="display:inline;">
+    <button>Delete</button>
+</form>
+<% include ./partials/footer %>

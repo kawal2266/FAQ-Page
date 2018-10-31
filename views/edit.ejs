@@ -1,0 +1,12 @@
+<h1>Edit The <%= faq.problem %></h1>
+
+<form action="/faqs/<%= faq._id%>?_method=PUT" method='POST'> <!--Meethod overriding the post request to put request-->>
+    <input type="text" name="faq[problem]" value="<%= faq.problem %>" >
+    <input type="text" name="faq[diagram]" value="<%= faq.diagram %>" >
+    <textarea  name="faq[solution]"> 
+        <% faq.solution.forEach(function(solutions) { %>
+            <%= solutions %>
+        <% }) %>
+    </textarea>
+    <input type="submit">
+</form>'
