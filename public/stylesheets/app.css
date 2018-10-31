@@ -11,6 +11,7 @@ body {
 .navbar
 {
     background: linear-gradient(to right, #00ccff 0%, #ff6699 100%);
+    padding-left : 0%;
 }
 .navbar .navbar-brand:hover,
 .navbar .navbar-brand:focus {
